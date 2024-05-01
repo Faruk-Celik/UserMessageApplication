@@ -12,7 +12,6 @@ namespace BusinessLayer.Concrete
     public class DraftManager : IDraftService
     {
         IDraftDal _draftDal;
-
         public DraftManager ( IDraftDal draftDal )
         {
             _draftDal = draftDal;
@@ -20,27 +19,27 @@ namespace BusinessLayer.Concrete
 
         public void TDelete ( int id )
         {
-            throw new NotImplementedException();
+            _draftDal.Delete(id);
         }
 
         public Draft TGetById ( int id )
         {
-            throw new NotImplementedException();
+            return _draftDal.GetByID(id);
         }
 
         public List<Draft> TGetListAll ()
         {
-            throw new NotImplementedException();
+            return _draftDal.GetList();
         }
 
         public void TInsert ( Draft t )
         {
-            throw new NotImplementedException();
+            _draftDal.Insert(t);
         }
 
         public void TUpdate ( Draft t )
         {
-            throw new NotImplementedException();
+            _draftDal.Update(t);
         }
     }
 }
