@@ -1,0 +1,19 @@
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+@await Component.InvokeAsync("_HeadComponentPartial")
+<body class="inner_page email_page">
+    <div class="full_container">
+        <div class="inner_container">
+            @await Component.InvokeAsync("_SidebarComponentPartial")
+            <div id="content">                
+                @await Component.InvokeAsync("_TopbarComponentPartial")                   
+                @RenderBody();
+        </div>       
+    </div>
+    @await Component.InvokeAsync("_ScriptComponentPartial")
+</body>
+</html>
